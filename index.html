@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tapBi.com - 实用导航站</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px 15px;
+    }
+    header .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    .search-box input {
+      padding: 6px 10px;
+      width: 100%;
+      max-width: 280px;
+      border: none;
+      border-radius: 4px;
+    }
+    .lang-switch button {
+      background: white;
+      color: #4285f4;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .weather {
+      margin-top: 10px;
+    }
+    main {
+      padding: 20px;
+    }
+    .category {
+      margin-bottom: 20px;
+    }
+    .category h3 {
+      background-color: #e0e0e0;
+      padding: 10px;
+      margin: 0;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .category-links {
+      display: none;
+      padding: 10px;
+    }
+    .category-links a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #1a0dab;
+    }
+    .category.active .category-links {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-box {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="top-bar">
+    <div class="logo">tapBi.com</div>
+    <form class="search-box" action="https://www.google.com/search" method="get" target="_blank">
+      <input type="text" name="q" placeholder="Google搜索...">
+    </form>
+    <div class="lang-switch">
+      <button onclick="switchLang('zh')">中文</button>
+      <button onclick="switchLang('en')">EN</button>
+    </div>
+  </div>
+  <div class="weather">
+    <a class="weatherwidget-io"
+       href="https://forecast7.com/en/37d77n122d42/san-francisco/"
+       data-label_1="San Francisco" data-label_2="Weather"
+       data-theme="original">Weather</a>
+  </div>
+</header>
+
+<main>
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>📺 视频 / Video</h3>
+    <div class="category-links">
+      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+      <a href="https://v.qq.com/" target="_blank">腾讯视频</a>
+    </div>
+  </div>
+
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>💬 社交 / Social</h3>
+    <div class="category-links">
+      <a href="https://twitter.com/" target="_blank">Twitter</a>
+      <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    </div>
+  </div>
+
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>🛍️ 购物 / Shopping</h3>
+    <div class="category-links">
+      <a href="https://www.amazon.com/" target="_blank">Amazon</a>
+      <a href="https://www.taobao.com/" target="_blank">淘宝</a>
+    </div>
+  </div>
+
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>🏦 银行 / Bank</h3>
+    <div class="category-links">
+      <a href="https://www.bankofamerica.com/" target="_blank">BoA</a>
+      <a href="https://www.chase.com/" target="_blank">Chase</a>
+    </div>
+  </div>
+
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>📰 新闻 / News</h3>
+    <div class="category-links">
+      <a href="https://www.cnn.com/" target="_blank">CNN</a>
+      <a href="https://news.baidu.com/" target="_blank">百度新闻</a>
+    </div>
+  </div>
+
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>🇨🇳 国内常用 / China</h3>
+    <div class="category-links">
+      <a href="https://www.baidu.com/" target="_blank">百度</a>
+      <a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a>
+    </div>
+  </div>
+
+  <div class="category" onclick="toggleCategory(this)">
+    <h3>🎮 游戏 / Game</h3>
+    <div class="category-links">
+      <a href="https://store.steampowered.com/" target="_blank">Steam</a>
+      <a href="https://www.epicgames.com/" target="_blank">Epic</a>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; text-align: center;">
+    <a href="https://chat.openai.com/" target="_blank" style="font-size: 18px; text-decoration: none;">💬 ChatGPT 聊天入口</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 tapBi.com - 导航站练习项目
+</footer>
+
+<script>
+  function toggleCategory(el) {
+    el.classList.toggle('active');
+  }
+
+  function switchLang(lang) {
+    alert(lang === 'zh' ? '已切换到中文（模拟）' : 'Switched to English (demo)');
+  }
+</script>
+<script>
+  !function(d,s,id){
+    var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){
+      js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,'script','weatherwidget-io-js');
+</script>
+
+</body>
+</html>
