@@ -37,39 +37,27 @@
       border: none;
       border-radius: 4px;
     }
-    .lang-switch button {
-      background: white;
-      color: #4285f4;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 4px;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-    .weather {
-      margin-top: 10px;
-    }
     main {
       padding: 20px;
     }
-    .category {
+    .common-sites, .category {
       margin-bottom: 20px;
     }
-    .category h3 {
-      background-color: #e0e0e0;
-      padding: 10px;
-      margin: 0;
+    .common-sites h3, .category h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
       cursor: pointer;
-      border-radius: 6px;
     }
-    .category-links {
-      display: none;
-      padding: 10px;
-    }
-    .category-links a {
+    .site-links a {
       margin-right: 15px;
       text-decoration: none;
       color: #1a0dab;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .category-links {
+      display: none;
+      padding-top: 6px;
     }
     .category.active .category-links {
       display: block;
@@ -99,41 +87,29 @@
     <form class="search-box" action="https://www.google.com/search" method="get" target="_blank">
       <input type="text" name="q" placeholder="Google搜索...">
     </form>
-    <div class="lang-switch">
-      <button onclick="switchLang('zh')">中文</button>
-      <button onclick="switchLang('en')">EN</button>
-    </div>
-  </div>
-  <div class="weather">
-    <a class="weatherwidget-io"
-       href="https://forecast7.com/en/37d77n122d42/san-francisco/"
-       data-label_1="San Francisco" data-label_2="Weather"
-       data-theme="original">Weather</a>
   </div>
 </header>
 
 <main>
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>📺 视频 / Video</h3>
-    <div class="category-links">
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-      <a href="https://v.qq.com/" target="_blank">腾讯视频</a>
-    </div>
-  </div>
-
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>💬 社交 / Social</h3>
-    <div class="category-links">
+  <div class="common-sites">
+    <h3>🌐 常用网站</h3>
+    <div class="site-links">
+      <a href="https://www.baidu.com/" target="_blank">百度</a>
+      <a href="https://www.google.com/" target="_blank">Google</a>
+      <a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a>
+      <a href="https://www.taobao.com/" target="_blank">淘宝</a>
+      <a href="https://www.amazon.com/" target="_blank">Amazon</a>
       <a href="https://twitter.com/" target="_blank">Twitter</a>
       <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
     </div>
   </div>
 
   <div class="category" onclick="toggleCategory(this)">
-    <h3>🛍️ 购物 / Shopping</h3>
+    <h3>🎮 游戏 / Game</h3>
     <div class="category-links">
-      <a href="https://www.amazon.com/" target="_blank">Amazon</a>
-      <a href="https://www.taobao.com/" target="_blank">淘宝</a>
+      <a href="https://store.steampowered.com/" target="_blank">Steam</a>
+      <a href="https://www.epicgames.com/" target="_blank">Epic</a>
     </div>
   </div>
 
@@ -153,22 +129,6 @@
     </div>
   </div>
 
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>🇨🇳 国内常用 / China</h3>
-    <div class="category-links">
-      <a href="https://www.baidu.com/" target="_blank">百度</a>
-      <a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a>
-    </div>
-  </div>
-
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>🎮 游戏 / Game</h3>
-    <div class="category-links">
-      <a href="https://store.steampowered.com/" target="_blank">Steam</a>
-      <a href="https://www.epicgames.com/" target="_blank">Epic</a>
-    </div>
-  </div>
-
   <div style="margin-top: 40px; text-align: center;">
     <a href="https://chat.openai.com/" target="_blank" style="font-size: 18px; text-decoration: none;">💬 ChatGPT 聊天入口</a>
   </div>
@@ -182,19 +142,6 @@
   function toggleCategory(el) {
     el.classList.toggle('active');
   }
-
-  function switchLang(lang) {
-    alert(lang === 'zh' ? '已切换到中文（模拟）' : 'Switched to English (demo)');
-  }
-</script>
-<script>
-  !function(d,s,id){
-    var js,fjs=d.getElementsByTagName(s)[0];
-    if(!d.getElementById(id)){
-      js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
-      fjs.parentNode.insertBefore(js,fjs);
-    }
-  }(document,'script','weatherwidget-io-js');
 </script>
 
 </body>
