@@ -1,148 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>tapBi.com - 实用导航站</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #4285f4;
-      color: white;
-      padding: 10px 15px;
-    }
-    header .top-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin-right: 15px;
-    }
-    .search-box input {
-      padding: 6px 10px;
-      width: 100%;
-      max-width: 280px;
-      border: none;
-      border-radius: 4px;
-    }
-    main {
-      padding: 20px;
-    }
-    .common-sites, .category {
-      margin-bottom: 20px;
-    }
-    .common-sites h3, .category h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-    .site-links a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #1a0dab;
-      display: inline-block;
-      margin-bottom: 6px;
-    }
-    .category-links {
-      display: none;
-      padding-top: 6px;
-    }
-    .category.active .category-links {
-      display: block;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-    @media (max-width: 600px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .search-box {
-        margin-top: 10px;
-        width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>JOZL.com 域名故事 | 科技公司介绍</title>
+    <meta name="description" content="了解JOZL.com科技公司及其域名背后的故事。创新、科技、未来，JOZL助力数字化转型。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: "微软雅黑", Arial, sans-serif; margin: 0; background: #f7fafd; }
+        header { background: #212e65; color: #fff; padding: 36px 0; text-align: center; }
+        section { max-width: 760px; margin: 40px auto; background: #fff; border-radius: 9px; box-shadow: 0 2px 12px #e6e8ef; padding: 36px 32px; }
+        h1, h2 { margin-top: 0; }
+        .story { margin-top: 30px; }
+        .domain { color: #212e65; font-weight: bold; font-size: 1.2em; }
+        .feature-list { margin: 24px 0 0 1em; }
+        footer { text-align: center; color: #888; padding: 20px 0; background: #f7fafd; }
+    </style>
 </head>
 <body>
-
-<header>
-  <div class="top-bar">
-    <div class="logo">tapBi.com</div>
-    <form class="search-box" action="https://www.google.com/search" method="get" target="_blank">
-      <input type="text" name="q" placeholder="Google搜索...">
-    </form>
-  </div>
-</header>
-
-<main>
-  <div class="common-sites">
-    <h3>🌐 常用网站</h3>
-    <div class="site-links">
-      <a href="https://www.baidu.com/" target="_blank">百度</a>
-      <a href="https://www.google.com/" target="_blank">Google</a>
-      <a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a>
-      <a href="https://www.taobao.com/" target="_blank">淘宝</a>
-      <a href="https://www.amazon.com/" target="_blank">Amazon</a>
-      <a href="https://twitter.com/" target="_blank">Twitter</a>
-      <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-    </div>
-  </div>
-
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>🎮 游戏 / Game</h3>
-    <div class="category-links">
-      <a href="https://store.steampowered.com/" target="_blank">Steam</a>
-      <a href="https://www.epicgames.com/" target="_blank">Epic</a>
-    </div>
-  </div>
-
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>🏦 银行 / Bank</h3>
-    <div class="category-links">
-      <a href="https://www.bankofamerica.com/" target="_blank">BoA</a>
-      <a href="https://www.chase.com/" target="_blank">Chase</a>
-    </div>
-  </div>
-
-  <div class="category" onclick="toggleCategory(this)">
-    <h3>📰 新闻 / News</h3>
-    <div class="category-links">
-      <a href="https://www.cnn.com/" target="_blank">CNN</a>
-      <a href="https://news.baidu.com/" target="_blank">百度新闻</a>
-    </div>
-  </div>
-
-  <div style="margin-top: 40px; text-align: center;">
-    <a href="https://chat.openai.com/" target="_blank" style="font-size: 18px; text-decoration: none;">💬 ChatGPT 聊天入口</a>
-  </div>
-</main>
-
-<footer>
-  &copy; 2025 tapBi.com - 导航站练习项目
-</footer>
-
-<script>
-  function toggleCategory(el) {
-    el.classList.toggle('active');
-  }
-</script>
-
+    <header>
+        <h1>JOZL.com 科技公司</h1>
+        <p>创新 · 科技 · 未来</p>
+    </header>
+    <section>
+        <h2>关于我们</h2>
+        <p>
+            JOZL.com 是一家专注于前沿技术研发与数字化解决方案的科技公司。我们致力于通过科技创新推动企业智能化升级，引领行业变革。
+        </p>
+        <div class="story">
+            <h2>域名故事</h2>
+            <p>
+                <span class="domain">JOZL.com</span> 这个域名简洁而独特，读音简短易记，寓意着“Join Our Zealous Life”（加入我们的热情人生），代表着我们对技术的热爱与对未来的无限追求。
+            </p>
+            <p>
+                域名中的每一个字母都承载着我们的企业精神：
+            </p>
+            <ul class="feature-list">
+                <li><b>J</b> - Joy（创新的乐趣）</li>
+                <li><b>O</b> - Opportunity（无限机遇）</li>
+                <li><b>Z</b> - Zeal（热情与专注）</li>
+                <li><b>L</b> - Leadership（技术引领）</li>
+            </ul>
+            <p>
+                选择 <span class="domain">JOZL.com</span>，不仅仅是选择了一个域名，更是选择了创新、激情与卓越的科技之路。
+            </p>
+        </div>
+        <div class="story">
+            <h2>我们的愿景</h2>
+            <p>
+                以技术为引擎，赋能企业数字化转型，打造智慧未来。
+            </p>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 JOZL.com 科技公司 | 版权所有
+    </footer>
 </body>
 </html>
