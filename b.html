@@ -79,6 +79,25 @@
       font-size: 1.1rem;
       color: #6b3b00;
     }
+    .back-home {
+      display: inline-block;
+      margin: 2rem auto 1.5rem auto;
+      padding: 0.6rem 1.5rem;
+      background: #ff7f50;
+      color: white;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 28px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(255, 127, 80, 0.18);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .back-home:hover {
+      background: #ff5722;
+      color: #fffbe9;
+    }
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -94,6 +113,10 @@
   </header>
 
   <div class="container">
+
+    <!-- 返回首页按钮（始终显示在顶部内容区） -->
+    <a href="/" class="back-home">返回首页</a>
+
     <section>
       <h2>品牌名称与理念</h2>
       <p>
