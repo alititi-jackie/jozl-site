@@ -17,6 +17,7 @@
       color: #fff;
       padding: 24px 0;
       text-align: center;
+      position: relative;
     }
     h1 {
       margin: 0;
@@ -47,15 +48,37 @@
     }
     .back-home {
       display: inline-block;
-      margin-top: 32px;
+      position: absolute;
+      left: 16px;
+      top: 24px;
       text-decoration: none;
-      color: #666;
+      color: #eee;
       font-size: 0.95em;
+      background: rgba(33, 46, 101, 0.01);
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .back-home:hover {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 24px 0;
+      }
+      .back-home {
+        left: 8px;
+        top: 12px;
+        font-size: 0.9em;
+        padding: 3px 6px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
+    <a class="back-home" href="/">← 返回首页</a>
     <h1>JOZL.COM 旗下域名导航</h1>
     <p>探索每一个独立站点背后的故事</p>
   </header>
@@ -73,8 +96,6 @@
       <li><a class="domain-link" href="https://18hot.vip" target="_blank">18hot.vip - 跳转至 TapBi.com</a></li>
       <li><a class="domain-link" href="https://123638.com" target="_blank">123638.com - 跳转至 TapBi.com</a></li>
     </ul>
-
-    <a class="back-home" href="/">← 返回 JOZL.com 首页</a>
   </div>
 </body>
 </html>
