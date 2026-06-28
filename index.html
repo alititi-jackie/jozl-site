@@ -58,36 +58,6 @@
     Template Version: 1.0.0
     Primary Domain: https://openaa.com
     Image Domain:   https://img.openaa.com
-
-    一、站长自己改的地方：只改下面 OPENAA_CONFIG
-    1. version：模板版本号，方便以后确认文件是否为最新版。
-    2. pageType：页面类型标记，只作识别和后续扩展，不改变当前视觉效果。
-       可用建议："standard" / "guide" / "notice" / "ad" / "topic"
-    3. banners：广告图片地址 + 点击广告打开的链接。
-    4. modules：控制广告轮播、滚动动态、8宫格、实用工具显示或隐藏。
-       true  = 显示
-       false = 隐藏
-       隐藏后页面会自动收紧，不会留下大空白。
-    5. templateLinkMode：控制“模板固定区域”的链接打开方式。
-       "new"  = 新窗口打开
-       "same" = 当前页面打开（默认）
-       只控制：顶部 Logo、顶部快捷导航、广告图、滚动动态、8宫格、实用工具、底部导航。
-       不控制：中间正文内容里的链接。
-
-    二、发给 AI 写内容时，请告诉 AI：
-    1. 保留模板整体效果，不要重做设计。
-    2. 不要修改 OPENAA_CONFIG，广告、板块显示隐藏、链接打开方式由站长自己改。
-    3. AI 只修改 head 里的 SEO 和“中间内容开始/中间内容结束”之间的正文。
-    4. 正文直接写进本 HTML，不要做外部动态加载内容页。
-    5. 正文建议用 <article class="template-card"> 包住，保持卡片风格统一。
-    6. 正文里的链接按内容需要设置，不受 templateLinkMode 控制。
-    7. 正式页面的 title、description、keywords、canonical、OG、Twitter、结构化数据都要按当前内容改好，不要写“模板”。
-
-    三、防误改边界：
-    1. 不要改顶部 Header、Logo、快捷导航、广告轮播、滚动动态、8宫格、实用工具、底部导航、回到顶部。
-    2. 不要把模板里的主站链接 https://openaa.com 改成旧站或其它域名。
-    3. 信息滚动条优先从 openaa-app 新站 API 动态读取，读取失败时才使用模板备用内容。
-    4. 如需调整模板结构，请另存为新版本，不要直接覆盖旧版本。
   ========================================================== -->
   <script>
     const OPENAA_CONFIG = {
@@ -843,41 +813,64 @@
           </div>
         </article>
 
-        <article class="template-card" id="jozl-projects">
-          <h2>🌐 项目生态</h2>
+
+
+                 <article class="template-card" id="jozl-projects">
+          <h2>OpenAA 项目</h2>
           <div class="jozl-grid">
             <a class="jozl-project" href="https://openaa.com/" target="_blank" rel="noopener noreferrer">
-              <div class="jozl-project-icon">🏠</div>
-              <div class="jozl-project-name">OpenAA</div>
-              <div class="jozl-project-desc">华人生活导航入口</div>
+              <div class="jozl-project-icon">🌐</div>
+              <div class="jozl-project-name">OpenAA 华人生活站</div>
+              <div class="jozl-project-domain">openaa.com</div>
+              <div class="jozl-project-desc">OpenAA 华人生活入口，面向海外华人的生活信息与服务入口。</div>
             </a>
+
+            <a class="jozl-project" href="https://tools.openaa.com/" target="_blank" rel="noopener noreferrer">
+              <div class="jozl-project-icon">🛠️</div>
+              <div class="jozl-project-name">OpenAA 工具</div>
+              <div class="jozl-project-domain">tools.openaa.com</div>
+              <div class="jozl-project-desc">OpenAA 生态下的实用工具入口。</div>
+            </a>
+
+             <a class="jozl-project" href="https://go.openaa.com/" target="_blank" rel="noopener noreferrer">
+              <div class="jozl-project-icon">🚀</div>
+              <div class="jozl-project-name">OpenAA Go</div>
+              <div class="jozl-project-domain">go.openaa.com</div>
+              <div class="jozl-project-desc">OpenAA 的专题、活动、服务与快速入口。</div>
+            </a>
+
             <a class="jozl-project" href="https://numbermobi.com/" target="_blank" rel="noopener noreferrer">
-              <div class="jozl-project-icon">💎</div>
-              <div class="jozl-project-name">靓号交易</div>
-              <div class="jozl-project-desc">美国手机靓号</div>
+              <div class="jozl-project-icon">📱</div>
+              <div class="jozl-project-name">OpenAA 手机靓号网</div>
+              <div class="jozl-project-domain">numbermobi.com</div>
+              <div class="jozl-project-desc">面向华人用户的手机靓号展示与选号平台。</div>
             </a>
-            <a class="jozl-project" href="https://onegobuy.com/" target="_blank" rel="noopener noreferrer">
+
+             <a class="jozl-project" href="https://onegobuy.com/" target="_blank" rel="noopener noreferrer">
               <div class="jozl-project-icon">🛍️</div>
               <div class="jozl-project-name">OneGoBuy</div>
-              <div class="jozl-project-desc">一站式购物导航</div>
+              <div class="jozl-project-domain">onegobuy.com</div>
+              <div class="jozl-project-desc">一站式购物导航。</div>
             </a>
-            <a class="jozl-project" href="https://amani.love/" target="_blank" rel="noopener noreferrer">
+
+             <a class="jozl-project" href="https://go.openaa.com/" target="_blank" rel="noopener noreferrer">
               <div class="jozl-project-icon">🎵</div>
               <div class="jozl-project-name">Amani</div>
-              <div class="jozl-project-desc">和平之歌</div>
+              <div class="jozl-project-domain">amani.love</div>
+              <div class="jozl-project-desc">和平之歌。</div>
             </a>
-            <a class="jozl-project" href="https://joeabc.com/" target="_blank" rel="noopener noreferrer">
-              <div class="jozl-project-icon">📚</div>
-              <div class="jozl-project-name">joeABC</div>
-              <div class="jozl-project-desc">英语学习平台</div>
-            </a>
-            <a class="jozl-project" href="https://69nav.com/" target="_blank" rel="noopener noreferrer">
-              <div class="jozl-project-icon">🔗</div>
+
+             <a class="jozl-project" href="https://69nav.com/" target="_blank" rel="noopener noreferrer">
+              <div class="jozl-project-icon">🔞</div>
               <div class="jozl-project-name">69nav</div>
-              <div class="jozl-project-desc">成人资源导航</div>
-            </a>
+              <div class="jozl-project-domain">69nav.com</div>
+              <div class="jozl-project-desc">成人资源导航。</div>
+            </a>            
+
           </div>
         </article>
+
+
 
         <article class="template-card" id="jozl-about">
           <h2>📖 关于我</h2>
@@ -1001,7 +994,7 @@
     // 信息滚动条优先复用 openaa-app 首页当前使用的 tickerItems / tickerSettings。
     // 读取失败时使用 openaa-app 首页 fallback ticker 内容。
     const FALLBACK_TICKER_ITEMS = [
-      { label: 'OpenAA 纽约站已上线，欢迎发布招聘、房屋、二手和本地服务信息', href: '/news' }
+      { label: 'OpenAA · 华人生活站、工具、Go 与手机靓号网项目展示', href: '/news' }
     ];
     const FALLBACK_TICKER_SETTINGS = {
       global: { isEnabled: true, intervalSeconds: 4 }
