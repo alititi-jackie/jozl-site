@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /domain/
-Allow: /
-
-Sitemap: https://jozl.com/sitemap.xml
