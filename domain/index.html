@@ -258,6 +258,36 @@
     .header-spacer { height: 56px; }
 
 
+    .domain-home-link {
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #2563eb;
+      padding: 7px 10px;
+      min-width: 86px;
+      justify-content: center;
+    }
+    .domain-home-link:active { background: #dbeafe; }
+    .domain-page-back {
+      padding: 10px 12px 0;
+      background: var(--app-bg);
+    }
+    .domain-page-back a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #dbeafe;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 1px 4px rgba(15,23,42,.06);
+    }
+    .domain-page-back a:active { background: #eff6ff; }
+
+
     .top-links-panel {
       position: fixed;
       top: 56px;
@@ -658,6 +688,27 @@
        精品域名出售页内容样式
        只作用于中间内容区域，不影响模板固定头部/底部
        =================================================== */
+
+    .domain-section-title { justify-content: space-between; align-items: center; margin-right: 0; }
+    .domain-section-title::before { flex: 0 0 auto; }
+    .domain-section-title span { flex: 1; min-width: 0; }
+    .domain-title-home-btn {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .domain-title-home-btn:active { background: #dbeafe; }
     .domain-page-content .template-card h1 { font-size: 24px; margin-bottom: 8px; }
     .domain-hero-card .page-subtitle { color: #52525b; font-size: 15px; line-height: 1.75; margin-bottom: 12px; }
     .domain-notice { margin-top: 10px; }
@@ -841,7 +892,10 @@
       <!-- 中间内容开始：以后只让 AI 修改这里，不要改顶部、广告轮播、8宫格、实用工具、底部导航 -->
 
       <section class="content-wrap domain-page-content">
-        <div class="section-title">精品域名出售</div>
+        <div class="section-title domain-section-title">
+          <span>精品域名出售</span>
+          <a class="domain-title-home-btn" href="https://openaa.com/" aria-label="返回 OpenAA 首页">返回首页</a>
+        </div>
 
         <article class="template-card domain-hero-card">
           <h1>💎 精品域名</h1>
