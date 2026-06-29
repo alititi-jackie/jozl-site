@@ -279,6 +279,40 @@
       line-height: 1.2;
     }
 
+    .address-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .address-title-row .name {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .copy-address {
+      flex: 0 0 auto;
+      min-height: 28px;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1976d2;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .copy-address:active {
+      transform: scale(0.98);
+    }
+
+    .address-card {
+      cursor: pointer;
+    }
+
     .value {
       display: block;
       margin-top: 10px;
@@ -466,15 +500,32 @@
       list.innerHTML = items.map((item) => {
         const name = escapeHtml(item.name);
         const value = escapeHtml(isPhone ? item.phone : item.address);
-        const href = isPhone ? `tel:${encodeURIComponent(item.phone)}` : mapUrl(item.address);
+
+        if (isPhone) {
+          const href = `tel:${encodeURIComponent(item.phone)}`;
+          return `
+            <a class="card" href="${href}">
+              <span class="card-inner">
+                <span class="name">${name}</span>
+                <span class="value">${value}</span>
+              </span>
+            </a>
+          `;
+        }
+
+        const href = mapUrl(item.address);
+        const addressAttr = escapeAttribute(item.address);
 
         return `
-          <a class="card" href="${href}" ${isPhone ? "" : 'target="_blank" rel="noopener noreferrer"'}>
-            <span class="card-inner">
-              <span class="name">${name}</span>
+          <div class="card address-card" role="link" tabindex="0" data-map-url="${escapeAttribute(href)}">
+            <div class="card-inner">
+              <div class="address-title-row">
+                <span class="name">${name}</span>
+                <button class="copy-address" type="button" data-address="${addressAttr}" aria-label="复制地址">复制</button>
+              </div>
               <span class="value">${value}</span>
-            </span>
-          </a>
+            </div>
+          </div>
         `;
       }).join("");
     }
@@ -486,6 +537,48 @@
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replaceAll("`", "&#096;");
+    }
+
+    function openMapUrl(url) {
+      if (!url) return;
+      if (url.startsWith("geo:")) {
+        window.location.href = url;
+        return;
+      }
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    async function copyText(value) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(value);
+          return true;
+        } catch (_) {}
+      }
+
+      const textarea = document.createElement("textarea");
+      textarea.value = value;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.top = "-9999px";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+
+      let copied = false;
+      try {
+        copied = document.execCommand("copy");
+      } catch (_) {
+        copied = false;
+      }
+
+      document.body.removeChild(textarea);
+      return copied;
     }
 
     phoneTab.addEventListener("click", () => {
@@ -505,6 +598,37 @@
     searchInput.addEventListener("input", (event) => {
       state.query = event.target.value;
       render();
+    });
+
+    list.addEventListener("click", async (event) => {
+      const copyButton = event.target.closest(".copy-address");
+      if (copyButton) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const address = copyButton.getAttribute("data-address") || "";
+        const copied = await copyText(address);
+        const originalText = copyButton.textContent;
+        copyButton.textContent = copied ? "已复制" : "复制失败";
+        setTimeout(() => {
+          copyButton.textContent = originalText || "复制";
+        }, 1500);
+        return;
+      }
+
+      const addressCard = event.target.closest(".address-card");
+      if (addressCard) {
+        openMapUrl(addressCard.getAttribute("data-map-url") || "");
+      }
+    });
+
+    list.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const addressCard = event.target.closest(".address-card");
+      if (!addressCard || event.target.closest(".copy-address")) return;
+
+      event.preventDefault();
+      openMapUrl(addressCard.getAttribute("data-map-url") || "");
     });
 
     shareButton.addEventListener("click", async () => {
