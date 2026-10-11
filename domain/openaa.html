@@ -86,7 +86,6 @@ button{ font: inherit; }
       --app-border: #e4e4e7;
       --app-side-shadow: -32px 0 44px rgba(15, 23, 42, .14), 32px 0 44px rgba(15, 23, 42, .14);
     }
-.banner-dot.active{ width: 18px; border-radius: 999px; background: #fff; }
 .content-wrap{ padding: 14px 12px 18px; }
 .section-title{
       display: flex;
@@ -130,7 +129,6 @@ button{ font: inherit; }
 .mini-card{ background: #f8fafc; border: 1px solid #eef2f7; border-radius: 14px; padding: 12px; }
 .mini-card strong{ display: block; font-size: 15px; margin-bottom: 4px; }
 .mini-card span{ display: block; color: #64748b; font-size: 13px; line-height: 1.45; }
-.bottom-nav-item.active{ color: var(--app-blue); font-weight: 700; }
 .toast{
       position: fixed;
       left: 50%;
@@ -366,7 +364,38 @@ body{ background: #f4f4f7; }
 }
 .related-domain-card{ display:block; color:inherit; }
 .domain-muted-note{ font-size:13px; color:#64748b; line-height:1.65; margin-top:8px; }
-body{background:#f7f7f7;color:#18181b;padding:0!important;margin:0;min-height:100vh}.jozl-header{position:sticky;top:0;z-index:100;width:100%;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e4e4e7}.jozl-header-inner{width:min(100%,1180px);min-height:64px;margin:0 auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}.jozl-brand{display:inline-flex;align-items:center;gap:9px;min-width:0;color:#18181b;text-decoration:none;white-space:nowrap}.jozl-brand img{width:34px;height:34px;flex:0 0 34px;object-fit:contain;border-radius:50%}.jozl-brand-name{font-size:18px;font-weight:800;letter-spacing:-.35px}.jozl-brand-dot{width:4px;height:4px;border-radius:50%;background:#71717a;flex:0 0 4px;margin:0 2px}.jozl-section-name{font-size:14px;color:#52525b;font-weight:600}.jozl-header-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}.jozl-icon-button{width:40px;height:40px;flex:0 0 40px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid #e4e4e7;border-radius:10px;background:#fff;color:#27272a;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}.jozl-icon-button:hover{background:#f4f4f5;border-color:#d4d4d8}.jozl-icon-button svg{width:20px;height:20px;display:block}.jozl-icon-button:focus-visible{outline:2px solid #a1a1aa;outline-offset:2px}.jozl-domain-main{width:min(calc(100% - 32px),960px);margin:0 auto;min-height:55vh}.content-wrap{padding:18px 0 32px!important}.jozl-footer{width:100%;padding:22px 16px calc(18px + env(safe-area-inset-bottom));text-align:center;background:#fff;border-top:1px solid #e4e4e7;margin-top:28px}.jozl-footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px;margin:0 auto 14px}.jozl-footer-links a{color:#52525b;font-size:14px;text-decoration:none}.jozl-footer-links a:hover{color:#18181b}.jozl-footer-copyright{color:#71717a;font-size:12px;line-height:1.6}.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:rgba(24,24,27,.92);color:#fff;font-size:13px;padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.18)}@media(max-width:480px){.jozl-header-inner{min-height:58px;padding:0 12px;gap:8px}.jozl-brand{gap:7px}.jozl-brand img{width:30px;height:30px;flex-basis:30px}.jozl-brand-name{font-size:16px}.jozl-section-name{font-size:13px}.jozl-icon-button{width:36px;height:36px;flex-basis:36px}.jozl-footer-links{gap:20px}}
+body{background:#f7f7f7;color:#18181b;padding:0!important;margin:0;min-height:100vh}
+.jozl-header{position:sticky;top:0;z-index:100;width:100%;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e4e4e7}
+.jozl-header-inner{width:min(100%,1180px);min-height:64px;margin:0 auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.jozl-brand{display:inline-flex;align-items:center;gap:9px;min-width:0;color:#18181b;text-decoration:none;white-space:nowrap}
+.jozl-brand img{width:34px;height:34px;flex:0 0 34px;object-fit:contain;border-radius:50%}
+.jozl-brand-name{font-size:18px;font-weight:800;letter-spacing:-.35px}
+.jozl-brand-dot{width:4px;height:4px;border-radius:50%;background:#71717a;flex:0 0 4px;margin:0 2px}
+.jozl-section-name{font-size:14px;color:#52525b;font-weight:600}
+.jozl-header-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.jozl-icon-button{width:40px;height:40px;flex:0 0 40px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid #e4e4e7;border-radius:10px;background:#fff;color:#27272a;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.jozl-icon-button:hover{background:#f4f4f5;border-color:#d4d4d8}
+.jozl-icon-button svg{width:20px;height:20px;display:block}
+.jozl-icon-button:focus-visible{outline:2px solid #a1a1aa;outline-offset:2px}
+.jozl-domain-main{width:min(calc(100% - 32px),960px);margin:0 auto;min-height:55vh}
+.content-wrap{padding:18px 0 32px!important}
+.jozl-footer{width:100%;padding:22px 16px calc(18px + env(safe-area-inset-bottom));text-align:center;background:#fff;border-top:1px solid #e4e4e7;margin-top:28px}
+.jozl-footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px;margin:0 auto 14px}
+.jozl-footer-links a{color:#52525b;font-size:14px;text-decoration:none}
+.jozl-footer-links a:hover{color:#18181b}
+.jozl-footer-copyright{color:#71717a;font-size:12px;line-height:1.6}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:rgba(24,24,27,.92);color:#fff;font-size:13px;padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+@media(max-width:480px){
+.jozl-header-inner{min-height:58px;padding:0 12px;gap:8px}
+.jozl-brand{gap:7px}
+.jozl-brand img{width:30px;height:30px;flex-basis:30px}
+.jozl-brand-name{font-size:16px}
+.jozl-section-name{font-size:13px}
+.jozl-icon-button{width:36px;height:36px;flex-basis:36px}
+.jozl-footer-links{gap:20px}
+
+}
+
 </style>
 </head><body><header class="jozl-header"><div class="jozl-header-inner"><a class="jozl-brand" href="https://jozl.com/" aria-label="Jozl.com 首页"><img src="/logo.png" width="34" height="34" alt="Jozl.com" /><span class="jozl-brand-name">Jozl.com</span><span class="jozl-brand-dot" aria-hidden="true"></span><span class="jozl-section-name">域名</span></a><div class="jozl-header-actions" aria-label="页面操作"><a class="jozl-icon-button" href="https://go.openaa.com/" aria-label="返回 OpenAA 导航" title="返回 OpenAA 导航"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect></svg></a><button class="jozl-icon-button" type="button" onclick="shareJozl()" aria-label="分享当前页面" title="分享当前页面"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.7 10.7 6.6-4.4"></path><path d="m8.7 13.3 6.6 4.4"></path></svg></button></div></div></header><main class="jozl-domain-main"><section class="content-wrap">
         <div class="section-title">精品域名出售</div>
