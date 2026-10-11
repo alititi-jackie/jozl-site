@@ -102,6 +102,16 @@
 
     nav a:hover { color: var(--text); }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-left: auto;
+    }
+
+    .nav-actions nav { gap: 22px; }
+
     .nav-icon {
       width: 40px;
       height: 40px;
@@ -529,20 +539,22 @@
         <img class="brand-mark" src="/logo.png" alt="OpenAA Logo" width="34" height="34">
         <span>JOZL.COM</span>
       </a>
-      <nav aria-label="主导航">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#domains">Domains</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="nav-icon" href="https://go.openaa.com/" target="_self" aria-label="打开 OpenAA 导航" title="OpenAA 导航">
+      <div class="nav-actions">
+        <nav aria-label="主导航">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#domains">Domains</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="nav-icon" href="https://go.openaa.com/" target="_self" aria-label="打开 OpenAA 导航" title="OpenAA 导航">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3.5" y="3.5" width="6" height="6" rx="1.2"></rect>
           <rect x="14.5" y="3.5" width="6" height="6" rx="1.2"></rect>
           <rect x="3.5" y="14.5" width="6" height="6" rx="1.2"></rect>
           <rect x="14.5" y="14.5" width="6" height="6" rx="1.2"></rect>
         </svg>
-      </a>
+        </a>
+      </div>
     </div>
   </header>
 
